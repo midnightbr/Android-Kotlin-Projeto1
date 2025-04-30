@@ -5,7 +5,7 @@ package com.learn.androidcompletocursoudemy.heranca
  * sobrescrever os métodos nela existentes, é necessario colocar a palavra
  * 'open' para alterar a sua definição.
  */
-open class Animal (
+abstract class Animal (
     var cor: String,
     var tamanho: String,
     var peso: Double
@@ -17,10 +17,16 @@ open class Animal (
     open fun sleep() {
         println("Está dormindo!")
     }
+
+    /**
+     * Métodos abstratos são obrigatorios na implementação, no entanto,
+     * os mesmos não devem ter corpo, já que cada classe que herdar a classe
+     * devera escrever o código da funcionalidade
+     */
+    abstract fun launch()
 }
 
 /**
- * Obs.: Nos meus testes sozinho, percebi que também é possivel utilizando a palavra
- * abstract, como no C#. Agora, o porque e qual a diferença entre o open e o abstract,
- * preciso estudar e pesquisar sobre o assunto.
+ * Obs.: Classes Open são classes concretas e podem ser estanciadas e utilizadas,
+ * enquanto classes abstratas não, podem ser apenas herdadas.
  */

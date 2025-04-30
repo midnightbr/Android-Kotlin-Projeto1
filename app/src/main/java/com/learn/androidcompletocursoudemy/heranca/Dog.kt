@@ -5,6 +5,10 @@ class Dog(cor: String, tamanho: String, peso: Double): Animal(cor, tamanho, peso
         super.run()
         println(" um cão de 4 patas!")
     }
+
+    override fun launch() {
+        TODO("Not yet implemented")
+    }
 }
 
 /**

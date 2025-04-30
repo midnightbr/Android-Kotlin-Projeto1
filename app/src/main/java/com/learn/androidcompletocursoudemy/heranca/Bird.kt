@@ -4,4 +4,8 @@ class Bird(cor: String, tamanho: String, peso: Double): Animal(cor, tamanho, pes
     override fun run() {
         println("Correr como um passaro de 2 patas.")
     }
+
+    override fun launch() {
+        println("Comendo comida de passarinho")
+    }
 }
