@@ -20,4 +20,6 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "Android Completo (Curso Udemy) - Kotlin"
-include(":app")
+include(":anotacoes")
+include(":internal")
+include(":resources")
