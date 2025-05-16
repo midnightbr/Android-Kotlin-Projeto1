@@ -71,7 +71,7 @@ Não deixe de acompanhar o curso na Udemy para tirar o máximo proveito deste pr
 Os exemplos práticos abordados neste curso estão organizados em repositórios separados para facilitar a consulta e o aprendizado. Abaixo você encontrará os links para os repositórios específicos de cada projeto:  
 
 - **Interface Netflix**: [Link para o repositório](https://github.com/midnightbr/repoNetflix).  
-- **App Gasolina ou Álcool**: [Link para o repositório](https://github.com/midnightbr/repoGasolinaOuAlcool).  
+- **App Gasolina ou Etanol**: [Link para o repositório](https://github.com/midnightbr/EtanolOuGasolina).  
 - **CRUD com SQLite**: [Link para o repositório](https://github.com/midnightbr/repoSQLiteCRUD).  
 - **API com Retrofit**: [Link para o repositório](https://github.com/midnightbr/repoAPIRetrofit).  
 - **Projeto Firebase**: [Link para o repositório](https://github.com/midnightbr/repoFirebase).  
