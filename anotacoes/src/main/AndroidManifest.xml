@@ -13,11 +13,12 @@
         android:theme="@style/Theme.AndroidCompletoCursoUdemyKotlin"
         tools:targetApi="31">
         <activity
-            android:name=".DetailsActivity"
+            android:name=".SorteioActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
+            <!--Tag que indica qual activity será a principal-->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
