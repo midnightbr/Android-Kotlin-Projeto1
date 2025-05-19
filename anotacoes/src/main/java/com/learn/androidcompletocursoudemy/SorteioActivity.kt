@@ -12,6 +12,8 @@ import kotlin.random.Random
 
 class SorteioActivity : AppCompatActivity() {
     lateinit var btnClose: Button
+    lateinit var textName: TextView
+    lateinit var textIdade: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,6 +21,17 @@ class SorteioActivity : AppCompatActivity() {
         setContentView(R.layout.activity_sorteio)
 
         btnClose = findViewById(R.id.btnClose)
+        textName = findViewById(R.id.textName)
+        textIdade = findViewById(R.id.textIdade)
+
+        // Recuperando valores recebido da tela anterior
+        val bundle = intent.extras
+        val nome = bundle?.getString("nome")
+        val idade = bundle?.getInt("idade")
+
+        textName.text = nome
+        textIdade.text = idade.toString()
+
         btnClose.setOnClickListener {
             // Fechar tela/activity
             finish()

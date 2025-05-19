@@ -40,6 +40,10 @@ class MainActivity : AppCompatActivity() {
              */
             val intent = Intent(this, SorteioActivity::class.java)
 
+            // Passando parâmetros para a nova tela
+            intent.putExtra("nome", "John")
+            intent.putExtra("idade", 177)
+
             // Iniciar uma activity/tela de sorteio
             startActivity(intent)
         }
