@@ -8,6 +8,8 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.learn.androidcompletocursoudemy.serialize.Filme
+import com.learn.androidcompletocursoudemy.serialize.Usuario
 
 /**
  * Métodos de ciclo de vida de uma activity.
@@ -43,6 +45,13 @@ class MainActivity : AppCompatActivity() {
             // Passando parâmetros para a nova tela
             intent.putExtra("nome", "John")
             intent.putExtra("idade", 177)
+
+            val filme = Filme("Matrix", "Ação", 9.8)
+            val usuario = Usuario("Rich", 30, 1.75, 70.0)
+
+            // Utilizando o Serializable para passar um objeto
+            intent.putExtra("usuario", usuario)
+            intent.putExtra("filme", filme)
 
             // Iniciar uma activity/tela de sorteio
             startActivity(intent)
