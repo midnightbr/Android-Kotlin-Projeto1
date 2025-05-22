@@ -19,6 +19,7 @@ import com.learn.androidcompletocursoudemy.serialize.Usuario
 
 class MainActivity : AppCompatActivity() {
     lateinit var btnOpen: Button
+    lateinit var btnFragment: Button
 
     /**
      * O onCreate() é o primeiro método a ser chamado, responsável pela criação da
@@ -34,6 +35,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         btnOpen = findViewById(R.id.btnTelaSorteio)
+        btnFragment = findViewById(R.id.btnFragment)
+
         btnOpen.setOnClickListener {
             /**
              * Passando o contexto e a classe de destino da tela que será aberta.
@@ -54,6 +57,11 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("filme", filme)
 
             // Iniciar uma activity/tela de sorteio
+            startActivity(intent)
+        }
+
+        btnFragment.setOnClickListener {
+            val intent = Intent(this, FragmentActivity::class.java)
             startActivity(intent)
         }
 
