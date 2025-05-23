@@ -7,6 +7,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.os.bundleOf
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.fragment.app.commit
+import androidx.fragment.app.replace
 import com.learn.androidcompletocursoudemy.fragments.CallFragment
 import com.learn.androidcompletocursoudemy.fragments.ChatFragment
 import com.learn.androidcompletocursoudemy.fragments.StatusFragment
@@ -44,7 +46,7 @@ class FragmentActivity : AppCompatActivity() {
         }
 
         btnStatus.setOnClickListener {
-            val statusFragment = StatusFragment()
+            // val statusFragment = StatusFragment()
             /**
              * Para activity normais utilizamos o extras para passar informações entre activity`s
              * já os fragments é utilizado o arguments para passar as informações ou objetos
@@ -52,11 +54,27 @@ class FragmentActivity : AppCompatActivity() {
              */
             // O bundleOf abaixo está funcionando da seguinte forma: chave to valor,
             // assim como bundle normal
-            statusFragment.arguments = bundleOf("categoria" to "usuário")
+            // statusFragment.arguments = bundleOf("categoria" to "usuário")
 
-            supportFragmentManager.beginTransaction()
+            /*supportFragmentManager.beginTransaction()
                 .replace(R.id.fragmentContent, statusFragment)
-                .commit()
+                .commit()*/
+            // Utilizando o KTX Jetpack
+            /*supportFragmentManager.commit {
+                replace(R.id.fragmentContent, statusFragment)
+            }*/
+            // Forma mais simplificada utilizando o KTX
+            val bundle = bundleOf("categoria" to "Ktx Jetpack")
+            supportFragmentManager.commit {
+                replace<StatusFragment>(
+                    R.id.fragmentContent,
+                    args = bundle
+                )
+            }
+            /**
+             * Com a opção abaixo não é mais necessario ter que estanciar a classe da fragment
+             * para passar os valores para ela.
+             */
         }
 
         btnCall.setOnClickListener {
