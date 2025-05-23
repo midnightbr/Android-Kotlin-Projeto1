@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.os.bundleOf
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.learn.androidcompletocursoudemy.fragments.CallFragment
@@ -43,8 +44,18 @@ class FragmentActivity : AppCompatActivity() {
         }
 
         btnStatus.setOnClickListener {
+            val statusFragment = StatusFragment()
+            /**
+             * Para activity normais utilizamos o extras para passar informações entre activity`s
+             * já os fragments é utilizado o arguments para passar as informações ou objetos
+             * entre fragments.
+             */
+            // O bundleOf abaixo está funcionando da seguinte forma: chave to valor,
+            // assim como bundle normal
+            statusFragment.arguments = bundleOf("categoria" to "usuário")
+
             supportFragmentManager.beginTransaction()
-                .replace(R.id.fragmentContent, StatusFragment())
+                .replace(R.id.fragmentContent, statusFragment)
                 .commit()
         }
 
