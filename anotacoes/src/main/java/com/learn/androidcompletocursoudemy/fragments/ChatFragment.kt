@@ -6,11 +6,18 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.learn.androidcompletocursoudemy.R
 
 // Criando um fragment do zero
 class ChatFragment : Fragment() {
+
+    private lateinit var btnExecute: Button
+    private lateinit var editName: EditText
+    private lateinit var textResult: TextView
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -24,6 +31,14 @@ class ChatFragment : Fragment() {
             container,
             false
         )
+
+        btnExecute = view.findViewById(R.id.btnExecute)
+        editName = view.findViewById(R.id.editName)
+        textResult = view.findViewById(R.id.textResult)
+
+        btnExecute.setOnClickListener {
+            textResult.text = "Olá ${editName.text}"
+        }
 
         return view
     }
