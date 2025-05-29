@@ -29,6 +29,17 @@ fun teste(function: (Int, Int) -> Int, text: String) {
     println(text)
 }
 
+// Criando função anonima/lambda dentro de uma classe
+class Anonima {
+    // Retorno Unit significa que a função não retorna nada, ou seja, void
+    fun lambdaFunction ( function: () -> Unit) { function() }
+    // Função anonima/lambda com diversos parametros
+    fun multiVariavel (text: String, function: () -> Unit) {
+        function()
+        println(text)
+    }
+}
+
 fun main() {
     // Exemplo de como passar uma função
     calcular(::somar)
@@ -40,4 +51,27 @@ fun main() {
     // Criando a função dentro da chamada do método
     teste({ a, b -> a + b }, "teste")
 
+    // Criando uma função anonima/lambda
+    val funcAnonima = {
+        println("Função anonima")
+    }
+
+    // Criando uma função anonima/lambda com variavel
+    val funcAnonimaParam = { name: String ->
+        println("Olá $name")
+    }
+
+    val anonima = Anonima()
+    anonima.lambdaFunction {
+        println("Função anonima sendo executada dentro de um método como parametro.")
+    }
+    // Chamando a função anonima/lambda com varios parametros
+    anonima.multiVariavel("Olá Mundo") {
+        println("Função anonima sendo executada dentro de um método com varios parametros.")
+    }
+
+
+    // Chamando a função anonima/lambda
+    funcAnonima()
+    funcAnonimaParam("John")
 }
