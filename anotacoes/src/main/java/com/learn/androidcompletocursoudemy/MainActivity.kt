@@ -18,7 +18,7 @@ import com.learn.androidcompletocursoudemy.serialize.Usuario
  */
 
 class MainActivity : AppCompatActivity() {
-    lateinit var btnOpen: Button
+    lateinit var btnOpenLottery: Button
     lateinit var btnFragment: Button
 
     /**
@@ -34,10 +34,10 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
 
-        btnOpen = findViewById(R.id.btnTelaSorteio)
+        btnOpenLottery = findViewById(R.id.btnTelaSorteio)
         btnFragment = findViewById(R.id.btnFragment)
 
-        btnOpen.setOnClickListener {
+        btnOpenLottery.setOnClickListener {
             /**
              * Passando o contexto e a classe de destino da tela que será aberta.
              * Note que para passar a classe resposanvel pela tela, é utilizado

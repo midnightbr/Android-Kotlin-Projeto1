@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.learn.androidcompletocursoudemy.R
 
@@ -37,6 +38,17 @@ class ChatFragment : Fragment() {
         textResult = view.findViewById(R.id.textResult)
 
         btnExecute.setOnClickListener {
+
+            /**
+             * Esse método mostra uma mensagem no roda da tela, no qual,
+             * você defini o tempo de duração com o parâmetro Toast.LENGTH_LONG
+             * ou Toast.LENGTH_SHORT.
+             */
+            Toast.makeText(
+                this.context,
+                "Sucesso",
+                Toast.LENGTH_LONG).show()
+
             textResult.text = "Olá ${editName.text}"
         }
 
